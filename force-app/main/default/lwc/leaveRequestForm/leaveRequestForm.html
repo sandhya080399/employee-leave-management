@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Submit Leave Request" icon-name="standard:event">
+        <div class="slds-p-around_medium">
+            <template if:true={balance.data}>
+                <p>Days Remaining: {balance.data.Days_Remaining__c}</p>
+            </template>
+
+            <lightning-input type="date" label="Start Date" onchange={handleStartDateChange}></lightning-input>
+            <lightning-input type="date" label="End Date" onchange={handleEndDateChange}></lightning-input>
+            <lightning-textarea label="Reason" onchange={handleReasonChange}></lightning-textarea>
+
+            <lightning-button label="Submit" variant="brand" onclick={handleSubmit} class="slds-m-top_small">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>
